@@ -4,7 +4,7 @@ var Nav = require('Nav');
 var Main = React.createClass({
     render: function (){
        return (
-           <div>
+           <div className="container center-aligned">
             <Nav />
             <h2>Main Component</h2>
             {this.props.children}
