@@ -1,6 +1,6 @@
 var axios = require("axios");
 
-const OPEN_WEATHER_MAP_URL = 'api.openweathermap.org/data/2.5/weather?appid=515d734e2ab67583f8ae1f138f7984ca&units=imperial';
+const OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=515d734e2ab67583f8ae1f138f7984ca&units=imperial';
 
 // 515d734e2ab67583f8ae1f138f7984ca
 
@@ -15,8 +15,8 @@ module.exports = {
             } else {
                 return res.data.main.temp;
             }
-        }, function(res) {
+        }, function (res) {
             throw new Error(res.data.message);
         });
     }
-};
+}

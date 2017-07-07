@@ -15,7 +15,7 @@ var Weather = React.createClass({
         var that = this;
 
         openWeatherMap.getTemp(location).then(function (temp) {
-            this.setState({
+            that.setState({
                 location: location,
                 temp: temp
             });
@@ -27,11 +27,11 @@ var Weather = React.createClass({
         var {temp, location} = this.state;
         return (
             <div>
-                <h3>Get Weather</h3>
+                <h4>Enter a city name to see the weather.</h4>
                 <WeatherForm onSearch={this.handleSearch}/>
                 <WeatherMessage location={location} temp={temp} />
             </div>
-        );
+        )
     }
 });
 module.exports = Weather;

@@ -6,7 +6,7 @@ var Main = React.createClass({
        return (
            <div className="container center-aligned">
             <Nav />
-            <h2>Main Component</h2>
+            <h2>Weather Checker</h2>
             {this.props.children}
            </div>
   

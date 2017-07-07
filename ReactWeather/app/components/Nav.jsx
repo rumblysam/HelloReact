@@ -5,10 +5,18 @@ var Nav = React.createClass({
     render: function () {
         return (
             <div>
-                <h2>Nav bar</h2>
-                <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink><br/>
-                <Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link><br/>
-                <Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Example</Link>
+                <ul className="nav-list">
+                    <li>
+                        <IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink><br/>
+                    </li>
+                    <li>
+                        <Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link><br/>
+                    </li>
+                    <li>
+                        <Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Example</Link>
+                    </li>
+                </ul>
+                
             </div>
         );
     }

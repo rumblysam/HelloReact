@@ -24871,7 +24871,7 @@
 	            React.createElement(
 	                'h2',
 	                null,
-	                'Main Component'
+	                'Weather Checker'
 	            ),
 	            this.props.children
 	        );
@@ -24899,26 +24899,37 @@
 	            'div',
 	            null,
 	            React.createElement(
-	                'h2',
-	                null,
-	                'Nav bar'
-	            ),
-	            React.createElement(
-	                IndexLink,
-	                { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	                'Get Weather'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	                Link,
-	                { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	                'About'
-	            ),
-	            React.createElement('br', null),
-	            React.createElement(
-	                Link,
-	                { to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	                'Example'
+	                'ul',
+	                { className: 'nav-list' },
+	                React.createElement(
+	                    'li',
+	                    null,
+	                    React.createElement(
+	                        IndexLink,
+	                        { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	                        'Get Weather'
+	                    ),
+	                    React.createElement('br', null)
+	                ),
+	                React.createElement(
+	                    'li',
+	                    null,
+	                    React.createElement(
+	                        Link,
+	                        { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	                        'About'
+	                    ),
+	                    React.createElement('br', null)
+	                ),
+	                React.createElement(
+	                    'li',
+	                    null,
+	                    React.createElement(
+	                        Link,
+	                        { to: '/examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	                        'Example'
+	                    )
+	                )
 	            )
 	        );
 	    }
@@ -24950,7 +24961,7 @@
 	        var that = this;
 
 	        openWeatherMap.getTemp(location).then(function (temp) {
-	            this.setState({
+	            that.setState({
 	                location: location,
 	                temp: temp
 	            });
@@ -24967,9 +24978,9 @@
 	            'div',
 	            null,
 	            React.createElement(
-	                'h3',
+	                'h4',
 	                null,
-	                'Get Weather'
+	                'Enter a city name to see the weather.'
 	            ),
 	            React.createElement(WeatherForm, { onSearch: this.handleSearch }),
 	            React.createElement(WeatherMessage, { location: location, temp: temp })
@@ -25021,7 +25032,6 @@
 
 	var WeatherForm = React.createClass({
 	    displayName: "WeatherForm",
-
 	    onFormSubmit: function onFormSubmit(e) {
 	        e.preventDefault();
 
@@ -25032,6 +25042,7 @@
 	            this.props.onSearch(location);
 	        }
 	    },
+
 	    render: function render() {
 	        return React.createElement(
 	            "div",
@@ -25059,7 +25070,7 @@
 
 	var axios = __webpack_require__(222);
 
-	var OPEN_WEATHER_MAP_URL = 'api.openweathermap.org/data/2.5/weather?appid=515d734e2ab67583f8ae1f138f7984ca&units=imperial';
+	var OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=515d734e2ab67583f8ae1f138f7984ca&units=imperial';
 
 	// 515d734e2ab67583f8ae1f138f7984ca
 
@@ -26626,7 +26637,14 @@
 	            React.createElement(
 	                'h3',
 	                null,
-	                'About component'
+	                'About'
+	            ),
+	            React.createElement(
+	                'p',
+	                null,
+	                'What\'s the tempurature outside?!',
+	                React.createElement('br', null),
+	                'I wanted to create an app using React.js and have it work.'
 	            )
 	        );
 	    }
